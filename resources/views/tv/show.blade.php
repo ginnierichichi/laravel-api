@@ -96,20 +96,20 @@
             <h2 class="text-4xl">Cast</h2>
 
             <div class="flex flex-col grid md:grid-cols-5 gap-8">
-                            @foreach($tvshow['cast'] as $cast)
-                                <div class="mt-8">
-                                    <a href="{{ route('actors.show', ['actor' => $cast['id']]) }}">
-                                        <img src="{{ 'https://image.tmdb.org/t/p/w300/'.$cast['profile_path'] }}" alt=""
-                                             class="hover:opacity-75 transition ease-in-out duration-150">
-                                        <div class="mt-2">
-                                            <div>{{ $cast['name'] }}</div>
-                                            <div class="flex items-center text-sm text-gray-400 my-1">
-                                                <span>{{ $cast['character'] }}</span>
-                                            </div>
-                                        </div>
-                                    </a>
+                @foreach($tvshow['cast'] as $cast)
+                    <div class="mt-8">
+                        <a href="{{ route('actors.show', ['actor' => $cast['id']]) }}">
+                            <img src="{{ 'https://image.tmdb.org/t/p/w300/'.$cast['profile_path'] }}" alt=""
+                                 class="hover:opacity-75 transition ease-in-out duration-150">
+                            <div class="mt-2">
+                                <div>{{ $cast['name'] }}</div>
+                                <div class="flex items-center text-sm text-gray-400 my-1">
+                                    <span>{{ $cast['character'] }}</span>
                                 </div>
-                            @endforeach
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -120,10 +120,10 @@
             <h2 class="text-4xl">Images</h2>
 
             <div class="flex flex-col grid md:grid-cols-3 gap-8 mt-8">
-                            @foreach($tvshow['images'] as $image)
-                                <img src="{{ 'https://image.tmdb.org/t/p/w500'.$image['file_path'] }}" alt=""
-                                     class="hover:opacity-75 transition ease-in-out duration-150">
-                            @endforeach
+                @foreach($tvshow['images'] as $image)
+                    <img src="{{ 'https://image.tmdb.org/t/p/w500'.$image['file_path'] }}" alt=""
+                         class="hover:opacity-75 transition ease-in-out duration-150">
+                @endforeach
             </div>
         </div>
     </div>

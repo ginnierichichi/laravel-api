@@ -20,10 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-//Route::get('/login', function () {
-//    return view('auth.login');
-//})->name('login');
-
 Route::get('/dashboard', [MoviesController::class, 'index'])->name('movie.index');
 Route::get('/movie/{movie}', [MoviesController::class, 'show'])->name('movie.show');
 Route::get('/actors/page/{page?}', [ActorsController::class, 'index'])->name('actors.index');
